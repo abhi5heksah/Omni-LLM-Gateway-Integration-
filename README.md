@@ -67,8 +67,8 @@ Sign up and obtain free API keys from these supported providers:
 ### Step 1: Clone Repository & Create Environment
 
 ```
-git clone https://github.com/your-username/beauty-parlor-ai.git
-cd beauty-parlor-ai
+git clone https://github.com/your-username/personal_chatbot-ai.git
+cd personal_chatbot-ai
 cp .env.example .env
 
 ```
@@ -76,7 +76,7 @@ cp .env.example .env
 Fill in your `.env` file:
 
 ```
-PROXY_MASTER_KEY=sk-beauty-parlor-secret-key-12345
+PROXY_MASTER_KEY=sk-personal_chatbot-secret-key-12345
 GEMINI_API_KEY=AIzaSyYourGeminiApiKeyHere
 GROQ_API_KEY=gsk_YourGroqApiKeyHere
 MISTRAL_API_KEY=your_mistral_api_key_here
@@ -102,7 +102,7 @@ curl http://localhost:4000/health
 ## 📂 Project Directory Layout
 
 ```
-beauty-parlor-ai/
+personal_chatbot-ai/
 ├── config.yaml             # Gateway routing & failover rules
 ├── docker-compose.yml      # Containerized proxy runner
 ├── .env.example            # Environment template
@@ -280,7 +280,7 @@ Run this script to simulate high user activity and verify that failover works un
 import axios from 'axios';
 
 const ENDPOINT = 'http://localhost:4000/v1/chat/completions';
-const API_KEY = process.env.PROXY_MASTER_KEY || 'sk-beauty-parlor-secret-key-12345';
+const API_KEY = process.env.PROXY_MASTER_KEY || 'sk-personal_chatbot-secret-key-12345';
 
 async function sendQuery(index) {
   try {
